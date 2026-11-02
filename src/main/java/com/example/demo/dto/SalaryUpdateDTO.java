@@ -1,8 +1,8 @@
 package com.example.demo.dto;
 
-import jakarta.validation.constraints.DecimalMin;
 import lombok.*;
 
+import javax.validation.constraints.DecimalMin;
 import java.math.BigDecimal;
 
 @Getter
@@ -13,4 +13,13 @@ import java.math.BigDecimal;
 public class SalaryUpdateDTO {
     @DecimalMin(value = "0.0", inclusive = false, message = "Salary must be greater than 0")
     private BigDecimal salary;
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
+    }
+
 }
